@@ -1,0 +1,8 @@
+.header {
+    background-color: $headerBgc;
+    display: flex;
+    flex-wrap: wrap;
+    &__right-side {
+        text-align: right;
+    }
+}

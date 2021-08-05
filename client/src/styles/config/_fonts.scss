@@ -1,0 +1,27 @@
+@mixin font($fname, $fstyle, $fweight, $furl) {
+    @font-face {
+      font-family: $fname;
+      font-style: $fstyle;
+      font-weight: $fweight;
+      src: url($furl) format('woff2');
+    }
+}
+
+//Kanit
+@include font( 'Kanit', normal, 100, '/assets/fonts/Kanit/Kanit-Thin.woff2');
+@include font( 'Kanit', italic, 100, '/assets/fonts/Kanit/Kanit-ThinItalic.woff2');
+@include font( 'Kanit', normal, 200, '/assets/fonts/Kanit/Kanit-ExtraLight.woff2');
+@include font( 'Kanit', italic, 200, '/assets/fonts/Kanit/Kanit-ExtraLightItalic.woff2');
+@include font( 'Kanit', normal, 300, '/assets/fonts/Kanit/Kanit-Light.woff2');
+@include font( 'Kanit', italic, 300, '/assets/fonts/Kanit/Kanit-LightItalic.woff2');
+@include font( 'Kanit', normal, 400, '/assets/fonts/Kanit/Kanit-Regular.woff2');
+@include font( 'Kanit', normal, 500, '/assets/fonts/Kanit/Kanit-Medium.woff2');
+@include font( 'Kanit', italic, 500, '/assets/fonts/Kanit/Kanit-MediumItalic.woff2');
+@include font( 'Kanit', normal, 600, '/assets/fonts/Kanit/Kanit-SemiBold.woff2');
+@include font( 'Kanit', italic, 600, '/assets/fonts/Kanit/Kanit-SemiBoldItalic.woff2');
+@include font( 'Kanit', normal, 700, '/assets/fonts/Kanit/Kanit-Bold.woff2');
+@include font( 'Kanit', italic, 700, '/assets/fonts/Kanit/Kanit-BoldItalic.woff2');
+@include font( 'Kanit', normal, 800, '/assets/fonts/Kanit/Kanit-ExtraBold.woff2');
+@include font( 'Kanit', italic, 800, '/assets/fonts/Kanit/Kanit-ExtraBoldItalic.woff2');
+@include font( 'Kanit', normal, 900, '/assets/fonts/Kanit/Kanit-Black.woff2');
+@include font( 'Kanit', italic, 900, '/assets/fonts/Kanit/Kanit-BlackItalic.woff2');

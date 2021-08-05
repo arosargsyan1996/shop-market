@@ -1,0 +1,7 @@
+$fontFamily: 'Kanit';
+$headerBgc: rgb(34, 38, 43);
+$iconAccentC: #afd5f7;
+
+:root {
+    --iconAccentC: #{$iconAccentC};
+  }
