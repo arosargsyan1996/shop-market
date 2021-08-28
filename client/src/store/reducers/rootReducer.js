@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import appReducer from './appReducer';
-import typesReducer from './typesReducer';
+import kindReducer from './kindReducer';
 import userReducer from './userReducer';
 
 const rootReducer = combineReducers( {
     app: appReducer,
     user: userReducer,
-    types: typesReducer,
+    kind: kindReducer,
 } );
 
 export default rootReducer;

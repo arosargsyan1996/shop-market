@@ -9,7 +9,11 @@ import 'config/apiConfig';
 import 'config/colorLog';
 import 'styles/index.scss';
 import configureStore from './config/storeConfig';
+import { faker } from 'store/actions/appActions';
 const store = configureStore();
+setInterval( () => {
+    store.dispatch( faker() );
+}, 1000 );
 
 render(
     <StrictMode>

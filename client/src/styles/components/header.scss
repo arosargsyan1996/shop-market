@@ -1,8 +1,82 @@
 .header {
-    background-color: $headerBgc;
+    background-color: $header_bgc;
     display: flex;
     flex-wrap: wrap;
+    padding: 14px 0;
     &__right-side {
-        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &__nav:not(.header__auth) {
+        display: flex;
+        align-items: center;
+    }
+    &__nav {
+        font-size: 18px;
+        &-link {
+            display: inline-block;
+            position: relative;
+            color: $white_c;
+            text-decoration: none;
+            transition: $fast_t;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: -2px;
+                left: 0;
+                background-color: $white_c__hover;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out, background 0.25s ease-out;
+            }
+            &:first-child {
+                margin-right: 12px;
+            }
+            &:hover, &:focus, &_active {
+                color: $white_c__hover;
+            }
+            &:hover, &_active {
+                &::after {
+                    background-color: $white_c2__hover;
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+            &:hover {
+                text-shadow: -1px 2px 1px rgba($white_c2__hover, .24);
+            }
+        }
+    }
+    &__logout, &__logo {
+        svg {
+            vertical-align: middle;
+            transition: $fast_t;
+        }
+    }
+    &__logout {
+        cursor: pointer;
+        display: inline-block;
+        width: 40px;
+    }
+    &__logo {
+        display: flex;
+        align-items: center;
+        width: 60px;
+        text-decoration: none;
+        color:#fff;
+        svg {
+            flex-shrink: 0;
+        }
+        &-text {
+            font-size: 24px;
+            line-height: 1;
+            margin-left: 8px;
+            font-family: $logo_ff;
+            color: $logoAccent2_c;
+            text-shadow: -1px 2px 1px rgba($logoAccent1_c, .18);
+        }
     }
 }

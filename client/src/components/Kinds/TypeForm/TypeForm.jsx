@@ -1,13 +1,13 @@
 import { useFormlo } from 'hooks/useFormlo';
 import * as yup from 'yup';
-import { createType } from 'store/actions/typesActions';
+import { createKind } from 'store/actions/kindsActions';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { getTypesError } from 'selectors/typesSelector';
+import { getKindsError } from 'selectors/kindsSelector';
 import { useEffect, memo } from 'react';
 import { useInput } from 'hooks/useInput';
 import Input from 'components/Form/Input/Input';
 import InputError from 'components/Form/Input/InputError';
-import { clearTypeError } from './../../../store/actions/typesActions';
+import { clearKindError } from '../../../store/actions/kindsActions';
 const MemoInput = memo( Input/* , areEqual */ )
 // function areEqual( prevProps, nextProps ) {
 //     console.log( 'areEqual', prevProps.error === nextProps.error );
@@ -29,7 +29,7 @@ const schema = yup.object().shape( {
 export const TypeForm = ( ) => {
     const { handleSubmit, setError, errors, register } = useFormlo( schema );
     const dispatch = useDispatch()
-    const apiErrors = useSelector( getTypesError, shallowEqual );
+    const apiErrors = useSelector( getKindsError, shallowEqual );
     const apiErrorKeys = Object.keys( apiErrors );
 
     const [ name, nameError ] = useInput( errors, register, 'name' );
@@ -38,7 +38,7 @@ export const TypeForm = ( ) => {
         e.preventDefault();
         console.log( 'submitHandler' );
         if ( !apiErrorKeys.length ) {
-            return handleSubmit( ( d, e ) => dispatch( createType( d ) ) )();
+            return handleSubmit( ( d, e ) => dispatch( createKind( d ) ) )();
         }
     }
     
@@ -49,7 +49,7 @@ export const TypeForm = ( ) => {
                     setError( key, { type: 'apiError', message: apiErrors[key] }, { shouldFocus: true } );
                 }
             } )
-            dispatch( clearTypeError() );
+            dispatch( clearKindError() );
         }
     }, [ apiErrors, apiErrorKeys, setError, dispatch ] )
 

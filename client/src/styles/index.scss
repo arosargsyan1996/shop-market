@@ -1,13 +1,19 @@
 @import 'config/base';
 
+html {
+  //font-size: (10/16) * 1rem;
+}
+
 body {
+  //line-height: normal;
   margin: 0;
+  font-size: (10/16) * 1rem;
   // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   //   sans-serif;
   // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
-  font-family: $fontFamily;
+  font-family: $ff;
 }
 
 code {

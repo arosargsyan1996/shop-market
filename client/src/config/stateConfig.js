@@ -1,6 +1,6 @@
 import { checkAuth } from 'store/actions/userActions';
 import { setLoading } from 'store/actions/appActions';
-import { fetchTypes } from 'store/actions/typesActions';
+import { fetchKinds } from 'store/actions/kindsActions';
 
 const getPageOptions = ( path, getState ) => {
     const optionsUrlIndex = path.indexOf( '/', 1 );
@@ -15,10 +15,10 @@ const getPageOptions = ( path, getState ) => {
     }
 
     switch ( urlRoute ) {
-        case '/':
+        case '/type':
             return {
                 options: [
-                    { cb: fetchTypes, checkSuccess: () => !!getState().types.types.length }
+                    { cb: fetchKinds, checkSuccess: () => !!getState().kind.data.length }
                 ]
             };
         case '/login':

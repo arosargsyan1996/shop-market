@@ -1,0 +1,71 @@
+$fz: 12;
+$h: 40;
+$w: $h;
+$pagination_w: 200;
+$progress_w: 10;
+
+$itemWidth: $h * 1px;
+$paginationHeight: $w * 1px;
+$paginationWidth: $pagination_w * 1px;
+$lineHeight: $h / $fz;
+$fontSize: $fz / 10 * 1em;
+
+:root {
+    --paginationItemWidth: #{$w};
+    --paginationWidth: #{$pagination_w};
+}
+
+.pagination {
+    position: absolute;
+    display: flex;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    &__wrap {
+        margin: 0 auto;
+        width: $paginationWidth;
+        height: $paginationHeight;
+        position: relative;
+        overflow-x: scroll;
+    }
+    &__box {
+        //transition: all 0.25s ease-in-out;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: $itemWidth;
+        height: $paginationHeight;
+        opacity: .5;
+        background-color: green;
+    }
+    &__item {
+        position: relative;
+        text-align: right;
+        max-width: ($progress_w + $w) * 1px;
+        width: 100%;
+        &_active &-value {
+            background-color: blue;
+            &::before {
+                background-color: blue;
+            }
+        }
+        &-value {
+            cursor: pointer;
+            background-color: red;
+            border-radius: 40%;
+            text-align: center;
+            display: inline-block;
+            width: $itemWidth;
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                height: 4px;
+                background-color: red;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: calc(100% - #{$itemWidth});
+            }
+        }
+    }
+}

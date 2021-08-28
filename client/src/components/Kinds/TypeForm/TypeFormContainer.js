@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getTypesError } from 'selectors/typesSelector';
+import { getTypesError } from 'selectors/kindsSelector';
 import { TypeForm } from './TypeForm';
 
 const mapStateToProps = ( state ) => ( {

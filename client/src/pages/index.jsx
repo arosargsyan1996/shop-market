@@ -2,6 +2,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from './Home';
 import LoginPage from './Login';
 import RegistrationPage from './SingUp';
+import KindsPage from './Kinds';
 
 const Pages = () => {    
     return (
@@ -20,6 +21,11 @@ const Pages = () => {
                 exact 
                 component={ RegistrationPage }
                 path={ '/registration' }
+            />
+            <Route
+                exact 
+                component={ KindsPage }
+                path={ '/type' }
             />
         </Switch>
     )

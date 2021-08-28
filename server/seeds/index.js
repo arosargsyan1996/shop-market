@@ -3,4 +3,7 @@ const { startDB } = require( '../db' );
 const typeSeed = require( './typeSeed' );
 
 startDB();
-typeSeed( 10 );
+
+( async () => {
+    await typeSeed( 1000 );
+} )();

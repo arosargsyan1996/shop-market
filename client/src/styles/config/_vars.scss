@@ -1,7 +1,24 @@
-$fontFamily: 'Kanit';
-$headerBgc: rgb(34, 38, 43);
-$iconAccentC: #afd5f7;
+$ff: 'Kanit';
+//logo
+$logo_ff: 'Electrolize';
+$logoAccent1_c: #69bcdd;
+$logoAccent2_c: #ecf4fd;
+
+$header_bgc: rgb(34, 38, 43);
+$fast_t: all 0.25s ease-in-out 0.05s;
+
+$white_c:#eaedf0;
+$white_c__hover: lighten($white_c, 16%);
+$white_c2__hover: lighten($logoAccent1_c, 16%);
+
+$iconAccent_c: lighten($logoAccent1_c, 14%);
+$iconAccent_c__hover: darken($iconAccent_c, 18%);
+
+
 
 :root {
-    --iconAccentC: #{$iconAccentC};
+    --iconAccentC: #{$iconAccent_c};
+    --iconAccentCHover: #{$iconAccent_c__hover};
+    --logoAccentC1: #{$logoAccent1_c};
+    --logoAccentC2: #{$logoAccent2_c};
   }
